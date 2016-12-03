@@ -15,6 +15,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+route::resource('/post', 'PostController');
+
+Auth::routes();
+
+route::resource('/event', 'EventController');
+
+Auth::routes();
+
 
 Auth::routes();
 
