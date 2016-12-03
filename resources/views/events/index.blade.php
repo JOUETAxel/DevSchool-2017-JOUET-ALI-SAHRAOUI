@@ -7,7 +7,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Liste des évènements</div>
                     <div class="panel-body">
-                        Afficher la liste des evenement
+                        Afficher la liste des evenements
 
                         @foreach($posts as $post)
                             <a href="{{ route('event.show', $post->id) }}">
