@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Event;
 use Illuminate\Http\Request;
 
 class EventController extends Controller
@@ -13,9 +14,7 @@ class EventController extends Controller
      */
     public function index()
     {
-
-        //
-        $event = Event::orderBy('id', 'desc')->paginate(10);
+        $events = Event::orderBy('id', 'desc')->paginate(10);
 
     }
 
@@ -26,7 +25,8 @@ class EventController extends Controller
      */
     public function create()
     {
-        //
+        return view('events.create');
+
     }
 
     /**
@@ -37,7 +37,25 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'title' => 'required|min:30',
+            'content' => 'required|min:100'
+        ], [
+            'title.required' => 'titre requis',
+            'title.min' => 'le titre de doit faire au moins 30 char',
+            'content.required' => 'contenu requis',
+            'content.min' => 'le contenu doit faire au moins 100 char'
+        ]);
+
+        //enregistrer le formulaire de creation
+        $event = new event;
+        $input = $request->input();
+        $input['user_id'] = Auth::user()->id;
+
+        $event->fill($input)->save();
+        return redirect()
+            ->route('event.index')
+            ->with('success', 'event publié');
     }
 
     /**
@@ -48,7 +66,10 @@ class EventController extends Controller
      */
     public function show($id)
     {
-        //
+        $event = Event::findOrFail($id);
+
+        //afficher un article
+        return view('events.show', compact('event'));
     }
 
     /**
@@ -59,7 +80,9 @@ class EventController extends Controller
      */
     public function edit($id)
     {
-        //
+        $event = Event::findOrFail($id);
+
+        return view('events.edit', compact('event'));
     }
 
     /**
@@ -71,7 +94,27 @@ class EventController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'title' => 'required|min:6',
+            'content' => 'required|min:20'
+        ], [
+            'title.required' => 'titre requis',
+            'title.min' => 'le titre de doit faire au moins 30 char',
+            'content.required' => 'contenu requis',
+            'content.min' => 'le contenu doit faire au moins 100 char'
+        ]);
+
+        //enregistre le formulaire d'edition
+
+        $event = Post::findOrFail($id);
+        $input = $request->input();
+
+        $event->fill($input)->save();
+
+
+        return redirect()
+            ->route('event.index')
+            ->with('success', 'event mis à jour');
     }
 
     /**
@@ -82,6 +125,10 @@ class EventController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $event = Post::findOrFail($id);
+        $event->delete();
+        return redirect()
+            ->route('event.index')
+            ->with('success', 'event mis à jour');
     }
 }
