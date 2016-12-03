@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a4c53453-8f40-4a26-b363-b703b2a8a4ca" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/DevSchool-2017-JOUET-ALI-SAHRAOUI.iml" afterPath="$PROJECT_DIR$/.idea/DevSchool-2017-JOUET-ALI-SAHRAOUI.iml" />
+    <list default="true" id="a4c53453-8f40-4a26-b363-b703b2a8a4ca" name="Default" comment="test">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/web.php" afterPath="$PROJECT_DIR$/routes/web.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -149,7 +146,7 @@
       <option name="presentableId" value="Default" />
       <updated>1480701763480</updated>
       <workItem from="1480701765897" duration="541000" />
-      <workItem from="1480762687759" duration="1195000" />
+      <workItem from="1480762687759" duration="1284000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1480702124559</created>
@@ -162,7 +159,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1736000" />
+    <option name="totallyTimeSpent" value="1825000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
