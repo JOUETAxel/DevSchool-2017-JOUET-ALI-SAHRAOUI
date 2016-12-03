@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Event;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class EventController extends Controller
 {
@@ -106,7 +107,7 @@ class EventController extends Controller
 
         //enregistre le formulaire d'edition
 
-        $event = Post::findOrFail($id);
+        $event = Event::findOrFail($id);
         $input = $request->input();
 
         $event->fill($input)->save();
@@ -125,7 +126,7 @@ class EventController extends Controller
      */
     public function destroy($id)
     {
-        $event = Post::findOrFail($id);
+        $event = Event::findOrFail($id);
         $event->delete();
         return redirect()
             ->route('event.index')
