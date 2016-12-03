@@ -13,7 +13,10 @@ class EventController extends Controller
      */
     public function index()
     {
+
         //
+        $event = Event::orderBy('id', 'desc')->paginate(10);
+
     }
 
     /**
