@@ -91,7 +91,6 @@ class AdminController extends Controller
         $event->delete();
 
         return redirect()
-            ->route('post.index', 'event.index')
-            ->
+            ->route('post.index', 'event.index');
     }
 }
