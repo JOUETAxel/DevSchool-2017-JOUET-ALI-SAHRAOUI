@@ -8,7 +8,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">afficher formulaire de publication de l'article</div>
                     <div class="panel-body">
-                        Afficher le formulaire de publication de l'arcticle
+
 
                         {!! Form::open(array(
                         'route' => 'post.store',

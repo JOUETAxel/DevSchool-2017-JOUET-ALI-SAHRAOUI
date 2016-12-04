@@ -8,7 +8,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">afficher formulaire de publication de l'event</div>
                     <div class="panel-body">
-                        Afficher le formulaire de publication de l'event
+                        Afficher le formulaire de publication de l'even
 
                         {!! Form::open(array(
                         'route' => 'event.store',
