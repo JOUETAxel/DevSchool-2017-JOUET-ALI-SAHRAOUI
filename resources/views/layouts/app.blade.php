@@ -43,7 +43,14 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        &nbsp;
+                        &nbsp;<li><a href="{{ route('post.index') }}">Liste des articles</a></li>
+                         <li><a href="{{ route('event.index') }}">Liste des évènements </a></li>
+
+                        @if(Auth::check() && Auth::user()->isAdmin)
+
+                            <li><a href="{{ route('post.create') }}">Publier un article</a></li>
+                            <li><a href="{{ route('event.create') }}">Crée un évènement</a></li>
+                        @endif
                     </ul>
 
                     <!-- Right Side Of Navbar -->
