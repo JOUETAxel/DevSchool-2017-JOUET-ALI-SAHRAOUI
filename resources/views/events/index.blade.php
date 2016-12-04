@@ -15,8 +15,7 @@
                             </a>
                             <p>{{ $event->content }}</p>
                         @endforeach
-
-                        {{ $event->links() }}
+                        {{ $events->links() }}
                     </div>
                 </div>
             </div>
