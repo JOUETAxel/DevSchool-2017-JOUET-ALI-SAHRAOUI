@@ -29,7 +29,10 @@
 
 
                         {!! Form::submit('Publier',
-                        ['class' => 'btn btn-info']) !!}
+                        ['class' => 'btn btn-group-justified']) !!}
+
+                        <style>.btn-group-justified{background-color: lightsteelblue}</style>
+
 
                         {!! Form::close() !!}
                     </div>
