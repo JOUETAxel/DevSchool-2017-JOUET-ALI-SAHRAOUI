@@ -49,7 +49,7 @@
                         @if(Auth::check() && Auth::user()->isAdmin)
 
                             <li><a href="{{ route('post.create') }}">Publier un article</a></li>
-                            <li><a href="{{ route('event.create') }}">Crée un évènement</a></li>
+                            <li><a href="{{ route('event.create') }}">Créer un évènement</a></li>
                         @endif
                     </ul>
 
