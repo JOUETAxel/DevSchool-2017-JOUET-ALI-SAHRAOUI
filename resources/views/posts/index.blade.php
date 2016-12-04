@@ -25,5 +25,4 @@
 
 @endsection
 
-@extends('layouts.app')
 

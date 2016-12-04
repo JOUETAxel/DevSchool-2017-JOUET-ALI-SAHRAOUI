@@ -11,9 +11,9 @@
                         Afficher le formulaire de d'edition de l'event
 
                         {!! Form::model(
-                          $post,
+                          $event,
                           array(
-                        'route' => array('event.update', $post->id),
+                        'route' => array('event.update', $event->id),
                         'method' => 'PUT'))
                           !!}
 

@@ -9,14 +9,14 @@
                     <div class="panel-body">
                         Afficher la liste des evenements
 
-                        @foreach($posts as $post)
-                            <a href="{{ route('event.show', $post->id) }}">
-                                <h2>{{ $post->title }}</h2>
+                        @foreach($events as $event)
+                            <a href="{{ route('event.show', $event->id) }}">
+                                <h2>{{ $event->title }}</h2>
                             </a>
-                            <p>{{ $post->content }}</p>
+                            <p>{{ $event->content }}</p>
                         @endforeach
 
-                        {{ $posts->links() }}
+                        {{ $event->links() }}
                     </div>
                 </div>
             </div>
@@ -25,5 +25,5 @@
 
 @endsection
 
-@extends('layouts.app')
+
 
