@@ -18,6 +18,9 @@
 
                             <hr>
                             <hr>
+                        
+                            <style>hr{border-color:#9B9B9B;}</style>
+
                         @endforeach
 
                         {{ $posts->links() }}
