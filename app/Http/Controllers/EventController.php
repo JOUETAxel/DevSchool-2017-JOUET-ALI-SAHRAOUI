@@ -41,13 +41,13 @@ class EventController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'title' => 'required|min:30',
-            'content' => 'required|min:100'
+            'title' => 'required|min:6',
+            'content' => 'required|min:10'
         ], [
             'title.required' => 'titre requis',
-            'title.min' => 'le titre de doit faire au moins 30 char',
+            'title.min' => 'le titre de doit faire au moins 6 char',
             'content.required' => 'contenu requis',
-            'content.min' => 'le contenu doit faire au moins 100 char'
+            'content.min' => 'le contenu doit faire au moins 6 char'
         ]);
 
         //enregistrer le formulaire de creation
