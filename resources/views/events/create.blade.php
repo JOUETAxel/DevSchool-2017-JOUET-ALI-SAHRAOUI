@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">afficher formulaire de publication de l'event</div>
+                    <div class="panel-heading">Afficher formulaire de publication de l'event</div>
                     <div class="panel-body">
 
 
