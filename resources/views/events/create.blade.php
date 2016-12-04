@@ -12,7 +12,7 @@
 
                         {!! Form::open(array(
                         'route' => 'event.store',
-                         'method' => 'EVENT')) !!}
+                         'method' => 'POST')) !!}
 
                         {!! Form::label('title', 'Titre') !!}
                         {!! Form::text('title', null,
