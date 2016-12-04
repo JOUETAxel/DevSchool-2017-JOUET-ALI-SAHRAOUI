@@ -13,6 +13,7 @@
                         {!! Form::open(array(
                         'route' => 'event.store',
                          'method' => 'POST')) !!}
+
                         {!! Form::label('title', 'Title') !!}
                         {!! Form::text('title', null,
                         ['class' => 'form-control',
@@ -20,28 +21,30 @@
 
 
                         {!! Form::label('content', 'Starting The') !!}
-                        {!! Form::date('start', null,
+                        {!! Form::text('start', null,
                         ['class' => 'form-control',
-                        'placeholder' => 'starting day']) !!}
+                        'placeholder' => 'YYYY-mm-dd']) !!}
 
                         {!! Form::label('end', 'End The') !!}
-                        {!! Form::date('start', null,
+                        {!! Form::text('start', null,
                         ['class' => 'form-control',
-                        'placeholder' => 'End The']) !!}
+                        'placeholder' => 'YYYY-mm-dd']) !!}
 
                         {!! Form::label('place', 'The Adress') !!}
-                        {!! Form::textarea('content', null,
+                        {!! Form::textarea('place', null,
                         ['class' => 'form-control',
                         'placeholder' => 'The Adress']) !!}
 
                         {!! Form::label('price', 'The Price') !!}
-                        {!! Form::textarea('content', null,
+                        {!! Form::text('content', null,
                         ['class' => 'form-control',
                         'placeholder' => 'The Price']) !!}
 
 
                         {!! Form::submit('Publier',
                         ['class' => 'btn btn-group-justified']) !!}
+
+                        <hr>
 
                         <style>.btn-group-justified{background-color: lightsteelblue}</style>
 
