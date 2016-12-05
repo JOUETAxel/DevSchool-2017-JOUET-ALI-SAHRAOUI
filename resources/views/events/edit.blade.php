@@ -6,9 +6,8 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Afficher le formulaire de d'edition de l'event</div>
+                    <div class="panel-heading">Modifications</div>
                     <div class="panel-body">
-                        Afficher le formulaire de d'edition de l'event
 
                         {!! Form::model(
                           $event,

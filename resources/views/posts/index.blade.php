@@ -5,9 +5,8 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">afficher liste articles</div>
+                    <div class="panel-heading"><h3>Les Posts dispo</h3></div>
                     <div class="panel-body">
-                        Afficher la liste de l'article
                         @foreach($posts as $post)
                             <a href="{{ route('post.show', $post->id)}}">
                                 <h2>{{ $post->title }}</h2>

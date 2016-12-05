@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Afficher le formulaire de d'edition de l'arcticle</div>
+                    <div class="panel-heading"><h3>Tous les Posts</h3></div>
                     <div class="panel-body">
                         Afficher le formulaire de d'edition de l'arcticle
 
