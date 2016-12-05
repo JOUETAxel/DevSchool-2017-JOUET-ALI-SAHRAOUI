@@ -97,7 +97,7 @@ class EventController extends Controller
      */
     public function update(Request $request, $id)
     {
-       
+
 
         $event = Event::findOrFail($id);
         $input = $request->input();
