@@ -17,48 +17,43 @@
                         'method' => 'PUT'))
                           !!}
 
-                        {!! Form::label('title', 'Titre') !!}
+
+                        {!! Form::label('title', 'Title') !!}
                         {!! Form::text('title', null,
                         ['class' => 'form-control',
-                        'placeholder' => 'Titre']) !!}
+                        'placeholder' => 'Title']) !!}
 
 
-                        {!! Form::label('content', 'starting day') !!}
-                        {!! Form::date('start', null,
+                        {!! Form::label('content', 'Starting The') !!}
+                        {!! Form::text('start', null,
                         ['class' => 'form-control',
-                        'placeholder' => 'starting day']) !!}
+                        'placeholder' => 'YYYY-mm-dd']) !!}
 
-                        {!! Form::label('end', 'end') !!}
-                        {!! Form::date('start', null,
+                        {!! Form::label('end', 'End The') !!}
+                        {!! Form::text('start', null,
                         ['class' => 'form-control',
-                        'placeholder' => 'end']) !!}
+                        'placeholder' => 'YYYY-mm-dd']) !!}
 
-                        {!! Form::label('place', 'adress') !!}
-                        {!! Form::textarea('content', null,
+                        {!! Form::label('place', 'The Adress') !!}
+                        {!! Form::textarea('place', null,
                         ['class' => 'form-control',
-                        'placeholder' => 'adress']) !!}
+                        'placeholder' => 'The Adress']) !!}
 
-                        {!! Form::label('price', 'price') !!}
-                        {!! Form::textarea('content', null,
+                        {!! Form::label('price', 'The Price') !!}
+                        {!! Form::text('price', null,
                         ['class' => 'form-control',
-                        'placeholder' => 'price']) !!}
+                        'placeholder' => 'The Price']) !!}
 
 
                         {!! Form::submit('Publier',
                         ['class' => 'btn btn-group-justified']) !!}
+
                         <style>.btn btn-group-justified{background-color: lightgray}</style>
+
 
                         {!! Form::close() !!}
 
-                        $table->increments('id');
-                        $table->string('title');
-                        $table->date('start');
-                        $table->date('end');
-                        $table->string('place');
-                        $table->integer('price');
-                        $table->mediumText('content');
-                        $table->integer('user_id')->foreign('user_id')->references('id')->on('users');
-                        $table->timestamps();
+
                     </div>
                 </div>
             </div>
