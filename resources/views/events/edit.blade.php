@@ -39,7 +39,7 @@
                         ['class' => 'form-control',
                         'placeholder' => 'The Adress']) !!}
 
-                        {!! Form::label('centent', 'Description') !!}
+                        {!! Form::label('content', 'Description') !!}
                         {!! Form::textarea('content', null,
                         ['class' => 'form-control',
                         'placeholder' => 'Description']) !!}

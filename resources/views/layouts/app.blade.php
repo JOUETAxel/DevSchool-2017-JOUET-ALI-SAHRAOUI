@@ -47,21 +47,8 @@
                          <li><a href="{{ route('event.index') }}">Liste des évènements </a></li>
 
                         @if(Auth::check() && Auth::user()->isAdmin)
-
-
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    <span>Nouveau</span><span class="caret"></span>
-                                </a>
-
-                            <ul class="dropdown-menu" role="menu">
-
-                                <li>
-                                    <li><a href="{{ route('posts.create') }}">Publier un article</a></li>
-                                    <li><a href="{{ route('event.create') }}">Créer un évènement</a></li>
-                                </li>
-
-                            </ul>
+                            <li><a href="{{ route('post.create') }}">Publier un article</a></li>
+                            <li><a href="{{ route('event.create') }}">Créer un évènement</a></li>
                         @endif
                     </ul>
 
