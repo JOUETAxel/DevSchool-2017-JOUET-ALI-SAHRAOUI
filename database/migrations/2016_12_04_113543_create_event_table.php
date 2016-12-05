@@ -18,11 +18,11 @@ class CreateEventTable extends Migration
         {
                 $table->increments('id');
                 $table->string('title');
-                $table->date('start')->nullable();
-                $table->date('end')->nullable();
-                $table->string('place')->nullable();
-                $table->integer('price')->nullable();
-                $table->mediumText('content')->nullable();
+                $table->date('start');
+                $table->date('end');
+                $table->string('place');
+                $table->integer('price');
+                $table->mediumText('content');
                 $table->integer('user_id')->foreign('user_id')->references('id')->on('users');
                 $table->timestamps();
         });

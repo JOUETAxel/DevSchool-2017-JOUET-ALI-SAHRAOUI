@@ -31,9 +31,14 @@
                         'placeholder' => 'YYYY-mm-dd']) !!}
 
                         {!! Form::label('place', 'The Adress') !!}
-                        {!! Form::textarea('content', null,
+                        {!! Form::text('place', null,
                         ['class' => 'form-control',
                         'placeholder' => 'The Adress']) !!}
+
+                        {!! Form::label('centent', 'Description') !!}
+                        {!! Form::textarea('content', null,
+                        ['class' => 'form-control',
+                        'placeholder' => 'Description']) !!}
 
                         {!! Form::label('price', 'The Price') !!}
                         {!! Form::text('price', null,
