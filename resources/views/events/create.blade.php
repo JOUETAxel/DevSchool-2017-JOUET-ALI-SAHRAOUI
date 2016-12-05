@@ -20,23 +20,23 @@
                         'placeholder' => 'Title']) !!}
 
 
-                        {!! Form::label('content', 'Starting The') !!}
+                        {!! Form::label('start', 'Starting The') !!}
                         {!! Form::text('start', null,
                         ['class' => 'form-control',
                         'placeholder' => 'YYYY-mm-dd']) !!}
 
                         {!! Form::label('end', 'End The') !!}
-                        {!! Form::text('start', null,
+                        {!! Form::text('end', null,
                         ['class' => 'form-control',
                         'placeholder' => 'YYYY-mm-dd']) !!}
 
                         {!! Form::label('place', 'The Adress') !!}
-                        {!! Form::textarea('place', null,
+                        {!! Form::textarea('content', null,
                         ['class' => 'form-control',
                         'placeholder' => 'The Adress']) !!}
 
                         {!! Form::label('price', 'The Price') !!}
-                        {!! Form::text('content', null,
+                        {!! Form::text('price', null,
                         ['class' => 'form-control',
                         'placeholder' => 'The Price']) !!}
 
