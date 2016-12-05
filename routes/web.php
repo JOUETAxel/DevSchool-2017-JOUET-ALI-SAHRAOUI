@@ -19,6 +19,8 @@ route::resource('/post', 'PostController');
 
 route::resource('/event', 'EventController');
 
+route::resource('/admin', '');
+
 
 Auth::routes();
 
