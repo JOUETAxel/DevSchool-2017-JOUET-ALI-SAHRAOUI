@@ -107,10 +107,7 @@ class PostController extends Controller
     {
         //Enregistre le formulaire d'édition en BDD
 
-        $this->validate($request, [
-            'title' => 'required|min:6',
-            'content' => 'required|min:20'
-        ],
+        $this->validate($request,
             [
                 'title.required' => 'Titre requis',
                 'title.min' => 'Le titre doit faire au moins 6 caractères',

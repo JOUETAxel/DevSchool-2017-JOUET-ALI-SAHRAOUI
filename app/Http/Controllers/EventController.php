@@ -97,17 +97,7 @@ class EventController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
-            'title' => 'required|min:6',
-            'content' => 'required|min:20'
-        ], [
-            'title.required' => 'titre requis',
-            'title.min' => 'le titre de doit faire au moins 30 char',
-            'content.required' => 'contenu requis',
-            'content.min' => 'le contenu doit faire au moins 100 char'
-        ]);
-
-        //enregistre le formulaire d'edition
+       
 
         $event = Event::findOrFail($id);
         $input = $request->input();

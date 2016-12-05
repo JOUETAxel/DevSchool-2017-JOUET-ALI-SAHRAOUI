@@ -24,20 +24,25 @@
                         'placeholder' => 'Title']) !!}
 
 
-                        {!! Form::label('content', 'Starting The') !!}
+                        {!! Form::label('start', 'Starting The') !!}
                         {!! Form::text('start', null,
                         ['class' => 'form-control',
                         'placeholder' => 'YYYY-mm-dd']) !!}
 
                         {!! Form::label('end', 'End The') !!}
-                        {!! Form::text('start', null,
+                        {!! Form::text('end', null,
                         ['class' => 'form-control',
                         'placeholder' => 'YYYY-mm-dd']) !!}
 
                         {!! Form::label('place', 'The Adress') !!}
-                        {!! Form::textarea('place', null,
+                        {!! Form::text('place', null,
                         ['class' => 'form-control',
                         'placeholder' => 'The Adress']) !!}
+
+                        {!! Form::label('centent', 'Description') !!}
+                        {!! Form::textarea('content', null,
+                        ['class' => 'form-control',
+                        'placeholder' => 'Description']) !!}
 
                         {!! Form::label('price', 'The Price') !!}
                         {!! Form::text('price', null,
@@ -48,7 +53,9 @@
                         {!! Form::submit('Publier',
                         ['class' => 'btn btn-group-justified']) !!}
 
-                        <style>.btn btn-group-justified{background-color: lightgray}</style>
+                        <hr>
+
+                        <style>.btn-group-justified{background-color: lightsteelblue}</style>
 
 
                         {!! Form::close() !!}
