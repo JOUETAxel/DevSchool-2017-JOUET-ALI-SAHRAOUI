@@ -19,6 +19,6 @@ class isAdmin
         if(Auth::check() && Auth::user()->isAdmin) {
             return $next($request);
         }
-        return redirect()->route('post.index');
+        return redirect()->route('admin.index');
     }
 }

@@ -14,10 +14,7 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function __construct()
-    {
-        $this->middleware('isadmin');
-    }
+
     public function index()
     {
         // Liste des articles
