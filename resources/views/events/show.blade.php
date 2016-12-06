@@ -14,9 +14,9 @@
                     <strong>Auteur :</strong> {{ $event->user->name }}
                     <br>
 
-                    @if(Auth::check() && Auth::user()->isAdmin)
+                    @if (Auth::id() == $event->user_id)
 
-                        <a class="btn btn-info" href="{{ route('event.edit', $event->id) }}">Modifier</a>
+                        <a class="btn btn-info btn-group-justified" href="{{ route('event.edit', $event->id) }}">Modifier</a>
 
                         <br>
 
@@ -28,7 +28,7 @@
 
 
                         {!! Form::submit('Supprimer',
-                        ['class' => 'btn btn-danger'])
+                        ['class' => 'btn btn-danger btn-group-justified'])
                          !!}
 
 
