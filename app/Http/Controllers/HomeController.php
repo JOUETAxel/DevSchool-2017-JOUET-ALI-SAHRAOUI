@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Event;
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -21,8 +23,22 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
     public function index()
     {
-        return view('home');
+        // Liste des articles
+
+        $posts = Post::orderBy('id', 'desc')->paginate(5);
+        $events = Event::orderBy('id', 'desc')->paginate(5);
+
+        return view('home', compact('posts', 'events'));
+
+
+
+
     }
+
+
 }
+
