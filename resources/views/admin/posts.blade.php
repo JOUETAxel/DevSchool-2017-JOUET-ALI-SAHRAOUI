@@ -8,20 +8,7 @@
                     <div class="panel-heading">Liste des articles</div>
                     <div class="panel-body">
 
-                        @foreach($posts as $post)
 
-                            <a href="{{ route('post.show', $post->id) }}">
-                                <h2>{{ $post->title }}</h2>
-                            </a>
-
-                            <p>{{ $post->content }}</p>
-
-                            <hr>
-                            <hr>
-
-                            <style>hr{border-color:#9B9B9B;}</style>
-
-                        @endforeach
 
                         {{ $posts->links() }}
 
