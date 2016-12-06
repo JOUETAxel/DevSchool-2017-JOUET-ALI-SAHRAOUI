@@ -19,7 +19,7 @@ class AdminController extends Controller
         $posts = Post::orderBy('id', 'desc')->paginate(5);
         $events = Event::orderBy('id', 'desc')->paginate(5);
 
-        return view('home', compact('posts', 'events'));
+        return view('admin.index', compact('posts', 'events'));
 
     }
 

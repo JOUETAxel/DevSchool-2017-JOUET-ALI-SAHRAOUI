@@ -17,7 +17,7 @@ class EventController extends Controller
     {
         $events = Event::orderBy('id', 'desc')->paginate(5);
 
-        return view('events.index', compact('events'));
+        return view('admin.index', compact('events'));
 
     }
 
@@ -28,7 +28,7 @@ class EventController extends Controller
      */
     public function create()
     {
-        return view('events.create');
+        return view('admin.create');
 
     }
 
@@ -57,7 +57,7 @@ class EventController extends Controller
 
         $event->fill($input)->save();
         return redirect()
-            ->route('event.index')
+            ->route('admin.index')
             ->with('success', 'event publié');
     }
 
@@ -72,7 +72,7 @@ class EventController extends Controller
         $event = Event::findOrFail($id);
 
         //afficher un article
-        return view('events.show', compact('event'));
+        return view('admin.show', compact('event'));
     }
 
     /**
@@ -85,7 +85,7 @@ class EventController extends Controller
     {
         $event = Event::findOrFail($id);
 
-        return view('events.edit', compact('event'));
+        return view('admin.edit', compact('event'));
     }
 
     /**
@@ -106,7 +106,7 @@ class EventController extends Controller
 
 
         return redirect()
-            ->route('event.index')
+            ->route('admin.index')
             ->with('success', 'event mis à jour');
     }
 
@@ -121,7 +121,7 @@ class EventController extends Controller
         $event = Event::findOrFail($id);
         $event->delete();
         return redirect()
-            ->route('event.index')
+            ->route('admin.index')
             ->with('success', 'event mis à jour');
     }
 }
