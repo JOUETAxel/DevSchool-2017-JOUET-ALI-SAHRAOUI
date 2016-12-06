@@ -15,7 +15,16 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin.index', compact('admin'));
+        // Liste des articles
+
+        $posts = Post::orderBy('id', 'desc')->paginate(5);
+        $events = Event::orderBy('id', 'desc')->paginate(5);
+
+        return view('home', compact('posts', 'events'));
+
+
+
+
     }
 
 }
