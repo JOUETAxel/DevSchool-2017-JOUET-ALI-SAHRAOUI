@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@if(Auth::check() && Auth::user()->isAdmin)
 @section('content')<div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
@@ -14,8 +14,8 @@
                     <strong>Auteur :</strong> {{ $post->user->name }}
                     <strong>Date de création :</strong> {{ $post->created_at }}
                     <br>
-                    @if(Auth::check() && Auth::user()->isAdmin)
-                    @else (Auth::id() == $post->user_id)
+
+
 
 
                         <a class="btn btn-primary btn-group-justified" href="{{ route('post.edit', $post->id) }}">Modifier</a>
@@ -35,8 +35,8 @@
 
 
                         {!! Form::close() !!}
-                        @endelse
-                    @endif
+
+
 
                     <a href="{{ route('post.index') }}">Retour aux articles</a>
                 </div>
