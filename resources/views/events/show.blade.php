@@ -15,6 +15,7 @@
                     <br>
 
                     @if (Auth::id() == $event->user_id)
+                        @if(Auth::user()->isAdmin)
 
                         <a class="btn btn-info btn-group-justified" href="{{ route('event.edit', $event->id) }}">Modifier</a>
 
@@ -34,6 +35,7 @@
 
                         {!! Form::close() !!}
 
+                    @endif
                     @endif
 
                     <a href="{{ route('event.index') }}">Retour aux articles</a>
