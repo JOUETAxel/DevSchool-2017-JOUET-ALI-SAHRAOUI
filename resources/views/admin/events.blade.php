@@ -15,6 +15,7 @@
                                 <h2>{{ $event->title }}</h2>
                                 <h4>Date : {{$event->start}} to {{$event->end}} at {{$event->place}}</h4>
                                 <h3>Price: {{$event->price}} $</h3>
+                                <span>User: {{$event->User->name}}</span>
                             </a>
 
                             <p>{{ $event->content }}</p>

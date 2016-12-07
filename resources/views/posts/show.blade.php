@@ -16,7 +16,6 @@
                         <br>
 
                         @if (Auth::id() == $post->user_id)
-                            @if(Auth::user()->isAdmin)
 
                             <a class="btn btn-primary btn-group-justified" href="{{ route('post.edit', $post->id) }}">Modifier</a>
 
@@ -36,7 +35,6 @@
 
                             {!! Form::close() !!}
 
-                        @endif
                         @endif
                         <a href="{{ route('post.index') }}">Retour aux articles</a>
                     </div>

@@ -62,5 +62,5 @@
                 @endforeach
 
             </table>
-            <div class="text-center"> {{ $events->links() }}</div>
+        </div>
 @endsection
