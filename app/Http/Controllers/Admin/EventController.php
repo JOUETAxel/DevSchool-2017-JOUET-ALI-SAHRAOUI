@@ -13,15 +13,16 @@ class EventController extends Controller
 
 
 
-    public function __construct()
-    {
-        $this->middleware('isadmin');
-    }
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('isadmin');
+    }
     public function index()
     {
         $events = Event::orderBy('id', 'desc')->paginate(5);
