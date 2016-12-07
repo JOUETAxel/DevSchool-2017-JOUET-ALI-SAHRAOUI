@@ -1,10 +1,9 @@
 @extends('layouts.app')
 
+@if(Auth::check() && Auth::user()->isAdmin)
 @section('content')
 
     <div class="container">
-
-
                 <table class="table table-striped table-bordered text-center">
 
                     <tr>
@@ -23,9 +22,13 @@
                             <td>{{ $post->created_at->format('y-m-d') }}</td>
                             <td id="flex">
                                 <a href="{{ route('post.edit', $post->id) }}" class="btn btn-default btn-xs"><i class="fa fa-pencil-square-o"></i></a>
-                                <a href="{{ route('post.edit', $post->id) }}" class="btn btn-default btn-xs"><i class="fa fa-pencil-square-o"></i></a>
-
-                                
+                                <a href=" {!! Form::model($post, array('route' => array('post.destroy', $post->id),
+                            'method' => 'DELETE'))
+                             !!}
+                                {!! Form::button('<i class="fa fa-trash-o" aria-hidden="true"></i>',
+                                ['class' => 'btn-default btn-xs btn btn-danger'])
+                                !!}
+                                {!! Form::close() !!}
                             </td>
 
                         </tr>
@@ -39,3 +42,8 @@
 
 @endsection
 
+@else
+
+    <h1>TU N'ES PAS ADMIN SALAUD</h1>
+
+@endif
