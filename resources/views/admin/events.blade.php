@@ -7,6 +7,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Liste des évènements</div>
                     <div class="panel-body">
+                        @include('errors.messages')
 
                         @foreach($events as $event)
 

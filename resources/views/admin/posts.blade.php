@@ -6,7 +6,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">{{ $post->title }}</div>
                 <div class="panel-body">
-
+                    @include('errors.messages')
                     {{ $post->content }}
 
                     <br>
@@ -14,10 +14,6 @@
                     <strong>Auteur :</strong> {{ $post->user->name }}
                     <strong>Date de création :</strong> {{ $post->created_at }}
                     <br>
-
-
-
-
                         <a class="btn btn-primary btn-group-justified" href="{{ route('post.edit', $post->id) }}">Modifier</a>
 
                         <br>
