@@ -8,6 +8,11 @@ use App\Http\Controllers\Controller;
 
 class PostController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('isadmin');
+    }
     public function index()
     {
         // Liste des articles
