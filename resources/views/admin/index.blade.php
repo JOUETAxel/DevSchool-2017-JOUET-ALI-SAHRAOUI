@@ -22,10 +22,11 @@
                             <td>{{ $post->created_at->format('y-m-d') }}</td>
                             <td id="flex">
                                 <a href="{{ route('post.edit', $post->id) }}" class="btn btn-default btn-xs"><i class="fa fa-pencil-square-o"></i></a>
-                                <a href=" {!! Form::model($post, array('route' => array('post.destroy', $post->id),
+                                <a href="{{ route('post.show', $post->id) }}" class="btn-info btn btn-default btn-xs"><i class="fa fa-eye"></i></a>
+                                 {!! Form::model($post, array('route' => array('post.destroy', $post->id),
                             'method' => 'DELETE'))
                              !!}
-                                {!! Form::button('<i class="fa fa-trash-o" aria-hidden="true"></i>',
+                                {!! Form::button('<i class="fa fa-trash-o"></i>',
                                 ['class' => 'btn-default btn-xs btn btn-danger'])
                                 !!}
                                 {!! Form::close() !!}
@@ -35,8 +36,8 @@
                     @endforeach
 
                 </table>
-        <div class="text-center">{{ $posts->links() }}</div>
-        </div>
+        <div class="text-center"> {{ $posts->links() }}</div>
+
 
 
 

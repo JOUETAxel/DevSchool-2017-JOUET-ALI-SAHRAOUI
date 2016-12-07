@@ -1,31 +1,48 @@
 @extends('layouts.app')
 
-@section('content')
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Liste des articles</div>
-                    <div class="panel-body">
+@section('content')<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">{{ $post->title }}</div>
+                <div class="panel-body">
 
-                        @foreach($posts as $post)
-                            <a href="{{ route('post.show', $post->id)}}">
-                                <h2>{{ $post->title }}</h2>
-                            </a>
-                            <p>{{ $post->content }}</p>
+                    {{ $post->content }}
 
-                            <hr>
-                            <hr>
+                    <br>
+                    <br>
+                    <strong>Auteur :</strong> {{ $post->user->name }}
+                    <strong>Date de création :</strong> {{ $post->created_at }}
+                    <br>
+                    @if(Auth::check() && Auth::user()->isAdmin)
+                    @else (Auth::id() == $post->user_id)
 
-                            <style>hr{border-color:#9B9B9B;}</style>
 
-                        @endforeach
-                        {{ $posts->links() }}
+                        <a class="btn btn-primary btn-group-justified" href="{{ route('post.edit', $post->id) }}">Modifier</a>
 
-                    </div>
+                        <br>
+
+                        {!! Form::model($post, array(
+
+                            'route' => array('post.destroy', $post->id),
+                            'method' => 'DELETE'))
+                             !!}
+
+
+                        {!! Form::submit('Supprimer',
+                        ['class' => 'btn btn-danger btn-group-justified'])
+                         !!}
+
+
+                        {!! Form::close() !!}
+                        @endelse
+                    @endif
+
+                    <a href="{{ route('post.index') }}">Retour aux articles</a>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
 @endsection
