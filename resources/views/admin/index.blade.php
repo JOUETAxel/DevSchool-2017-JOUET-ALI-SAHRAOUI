@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@include('errors.messages')
 @if(Auth::check() && Auth::user()->isAdmin)
 @section('content')
 
@@ -22,13 +22,9 @@
                             <td>{{ $post->created_at->format('y-m-d') }}</td>
                             <td id="flex">
                                 <a href="{{ route('post.edit', $post->id) }}" class="btn btn-default btn-xs"><i class="fa fa-pencil-square-o"></i></a>
-                                <a href="{{ route('admin.post.show', $post->id) }}" class="btn-info btn btn-default btn-xs"><i class="fa fa-eye"></i></a>
-                                 {!! Form::model($post, array('route' => array('admin.post.destroy', $post->id),
-                            'method' => 'DELETE'))
-                             !!}
-                                {!! Form::button('<i class="fa fa-trash-o"></i>',
-                                ['class' => 'btn-default btn-xs btn btn-danger'])
-                                !!}
+                                <a href="{{ route('post.show', $post->id) }}" class="btn-info btn btn-default btn-xs"><i class="fa fa-eye"></i></a>
+                                {!! Form::model($posts, array('route' => ['admin.post.destroy', $post->id], 'method' => 'DELETE')) !!}
+                                {{ Form::button('<i class="fa fa-trash-o"></i>', array('class'=>'btn btn-danger btn-xs', 'type'=>'submit')) }}
                                 {!! Form::close() !!}
                             </td>
 
@@ -44,7 +40,6 @@
 @endsection
 
 @else
-
-    <h1>TU N'ES PAS ADMIN SALAUD</h1>
+    <h1 class="text-center">TU N'ES PAS ADMIN SALAUD</h1>
 
 @endif

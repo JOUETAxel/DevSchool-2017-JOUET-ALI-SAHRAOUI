@@ -117,7 +117,7 @@ class PostController extends Controller
         $post->fill($input)->save();
 
         return redirect()
-            ->route('admin.show',$id)
+            ->route('admin.index',$id)
             ->with('success', 'L\'article a bien été mis à jour');
     }
 
@@ -135,7 +135,7 @@ class PostController extends Controller
         $post->delete();
 
         return redirect()
-            ->route('')
+            ->route('admin.index')
             ->with('sucess', 'L\'article a bien été supprimé');
     }
 
