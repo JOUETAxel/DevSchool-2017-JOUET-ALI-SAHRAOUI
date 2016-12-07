@@ -1,8 +1,8 @@
 @extends('layouts.app')
-@include('errors.messages')
+
 @if(Auth::check() && Auth::user()->isAdmin)
 @section('content')
-
+    @include('errors.messages')
     <div class="container">
                 <table class="table table-striped table-bordered text-center">
 
