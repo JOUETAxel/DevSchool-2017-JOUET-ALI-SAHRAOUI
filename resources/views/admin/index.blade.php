@@ -21,7 +21,7 @@
                             <td>{{ $post->created_at->format('y-m-d') }}</td>
                             <td id="flex">
                                 <a href="{{ route('post.edit', $post->id) }}" class="btn btn-default btn-xs"><i class="fa fa-pencil-square-o"></i></a>
-                                <a href="{{ route('post.show', $post->id) }}" class="btn-info btn btn-default btn-xs"><i class="fa fa-eye"></i></a>
+                                <a href="{{ route('admin.post.show', $post->id) }}" class="btn-info btn btn-default btn-xs"><i class="fa fa-eye"></i></a>
                                 {!! Form::model($posts, array('route' => ['admin.post.destroy', $post->id], 'method' => 'DELETE')) !!}
                                 {{ Form::button('<i class="fa fa-trash-o"></i>', array('class'=>'btn btn-danger btn-xs', 'type'=>'submit')) }}
                                 {!! Form::close() !!}
@@ -52,7 +52,7 @@
                         <td>{{ $event->created_at->format('y-m-d') }}</td>
                         <td id="flex">
                             <a href="{{ route('event.edit', $event->id) }}" class="btn btn-default btn-xs"><i class="fa fa-pencil-square-o"></i></a>
-                            <a href="{{ route('event.show', $event->id) }}" class="btn-info btn btn-default btn-xs"><i class="fa fa-eye"></i></a>
+                            <a href="{{ route('admin.event.show', $event->id) }}" class="btn-info btn btn-default btn-xs"><i class="fa fa-eye"></i></a>
                             {!! Form::model($events, array('route' => ['admin.event.destroy', $event->id], 'method' => 'DELETE')) !!}
                             {{ Form::button('<i class="fa fa-trash-o"></i>', array('class'=>'btn btn-danger btn-xs', 'type'=>'submit')) }}
                             {!! Form::close() !!}
@@ -62,5 +62,5 @@
                 @endforeach
 
             </table>
-            <div class="text-center"> {{ $events->links() }}</div>
+
 @endsection

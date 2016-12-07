@@ -13,7 +13,7 @@
                     <strong>Auteur :</strong> {{ $post->user->name }}
                     <strong>Date de création :</strong> {{ $post->created_at }}
                     <br>
-                        <a class="btn btn-primary btn-group-justified" href="{{ route('post.edit', $post->id) }}">Modifier</a>
+                        <a class="btn btn-primary btn-group-justified" href="{{ route('admin.post.show', $post->id) }}">Modifier</a>
 
                         <br>
 
